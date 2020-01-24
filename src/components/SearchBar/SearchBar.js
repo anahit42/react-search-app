@@ -9,12 +9,6 @@ class SearchBar extends React.Component {
         return this.props.onSearchInput(event.target.value);
     };
 
-    renderTeams(teams) {
-        return teams.map((team) => {
-           return <div key={team.id}> { team.name } </div>
-        });
-    }
-
     render () {
         return (
             <div className="ui search">
@@ -27,8 +21,8 @@ class SearchBar extends React.Component {
                     />
                     <i className="search icon"/>
                 </div>
-                <div >
-                    { this.renderTeams(this.props.teams) }
+                <div className="results">
+                    asdasd
                 </div>
             </div>
         );
@@ -36,13 +30,7 @@ class SearchBar extends React.Component {
 }
 
 SearchBar.propTypes = {
-    teams: PropTypes.array.isRequired,
-};
-
-const mapStateToProps = (state) => {
-    return {
-        teams: state.searchResults
-    };
+    onSearchInput: PropTypes.func
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -55,7 +43,4 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(SearchBar);
+export default connect(null, mapDispatchToProps)(SearchBar);
