@@ -13,13 +13,13 @@ import { watchInput } from './sagas';
 const sagaMiddleware = createSagaMiddleware();
 
 const store = createStore(
-    reducers,
-    applyMiddleware(sagaMiddleware)
+  reducers,
+  applyMiddleware(sagaMiddleware)
 );
 
 sagaMiddleware.run(watchInput);
 
 ReactDOM.render(
-    <Provider store={store}> <App/> </Provider>,
-    document.querySelector('#root')
+  <Provider store={store}> <App /> </Provider>,
+  document.querySelector('#root')
 );

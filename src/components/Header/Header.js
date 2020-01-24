@@ -1,12 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function Header (props) {
-    return (
-        <h3 className="field">
-            <label> { props.title } </label>
-        </h3>
-    );
+  return (
+    <h3 className='field'>
+      <label> {props.title} </label>
+    </h3>
+  );
 }
 
-export default Header;
+Header.propTypes = {
+  title: PropTypes.string
+};
 
+export default Header;
